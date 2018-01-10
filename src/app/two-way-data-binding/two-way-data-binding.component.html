@@ -1,0 +1,27 @@
+<div style="margin-top: 20px;">
+
+    <h2>Two-way Data Bind</h2>
+    <table>
+        <tr>
+            <td>
+                <p>"Manually"</p>
+                <input type="text" [value]="nome" (input)="nome = $event.target.value">
+
+                <p>"NgModel property and event bind"</p>
+                <input type="text" [ngModel]="nome" (ngModelChange)="nome = $event">
+
+                <p>"Native"</p>
+                <input type="text" [(ngModel)]="nome">
+            </td>
+            <td style="v-align: middle; padding-left: 20px">
+                <h3>Nome digitado: {{ nome }}</h3>
+            </td>
+        </tr>
+    </table>
+
+    <h3>Objetos</h3>
+    <p>O nome da pessoa é {{ pessoa.nome }}, idade {{ pessoa.idade }} e filho {{ pessoa.filho.nome }}</p>
+    <p><input type="text" [(ngModel)]="pessoa.nome"></p>
+    <p><input type="text" [(ngModel)]="pessoa.idade"></p>
+    <p><input type="text" [(ngModel)]="pessoa.filho.nome"></p>
+</div>

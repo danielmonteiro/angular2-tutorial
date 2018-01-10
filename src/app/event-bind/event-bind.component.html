@@ -1,0 +1,17 @@
+<div style="margin-top: 20px;">
+
+    <button class="btn btn-primary" (click)="onClick()">Click Here!</button>
+
+    <br><br>
+
+    <input #inputValue type="text" (keyup)="onKeyUp($event)" (keyup.enter)="onEnter($event.target.value)" (blur)="onBlur(inputValue.value)">
+
+    <p>Interpolation: {{ inputValue.value }}</p>
+    <p>From component onKeyUp($event): {{ stringKeyUp }}</p>
+    <p>From component onEnter(): {{ stringEnter }}</p>
+    <p>From component onEnter(): {{ stringEnter }}</p>
+    <p>From component onBlur(): {{ stringBlur }}</p>
+
+    <span (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()" [class.highlight]="isMouseOver" style="font-weight: bold;">Mouse over</span>
+
+</div>
